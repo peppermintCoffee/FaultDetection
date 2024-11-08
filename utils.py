@@ -16,7 +16,7 @@ class Rotate3D:
 
         return image, label
 
-class DeterministicFlip3D:
+class Flip3D:
     def __init__(self):
         pass
 
@@ -76,7 +76,7 @@ def get_transform(train):
 	if train:
 		return transforms.Compose([
 			Rotate3D(),
-            DeterministicFlip3D(),
+            Flip3D(),
             RandomNoise(noise_level=0.05),
 			transforms.ToDtype(torch.float32, scale=True),
 		])
