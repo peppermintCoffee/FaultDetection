@@ -18,54 +18,6 @@ np.random.seed(hash("improves reproducibility") % 2**32 - 1)
 torch.manual_seed(hash("by removing stochasticity") % 2**32 - 1)
 torch.cuda.manual_seed_all(hash("so runs are repeatable") % 2**32 - 1)
 
-# segy_file_path = r'C:/Users/Ilone/Labs/2024/Research/Orange_Basin_cropped.sgy'
-
-# with segyio.open(segy_file_path, "r") as segyfile:
-#     seismic_cube = segyio.tools.cube(segyfile)
-
-#     # Get inline and crossline indices
-#     inlines = segyfile.ilines  # Array of inline numbers
-#     crosslines = segyfile.xlines  # Array of crossline numbers
-#     samples = segyfile.samples
-
-# # Determine the number of inlines, crosslines, and samples
-# n_inlines = seismic_cube.shape[0]
-# n_crosslines = seismic_cube.shape[1]
-# n_samples = seismic_cube.shape[2]
-
-# print(f"Inlines: {n_inlines}, Crosslines: {n_crosslines}, Samples: {n_samples}")
-
-# seismic_cube = np.transpose(seismic_cube)
-
-# inline_idx = 120  # Change as needed
-
-# plt.figure(figsize=(10, 6))
-# plt.imshow(seismic_cube[inline_idx, :, :], cmap='seismic', aspect='auto')
-# plt.colorbar(label='Amplitude')
-# plt.xlabel('Crossline Index')
-# plt.ylabel('Time Sample')
-# plt.title(f'Inline {inlines[inline_idx]}')
-# plt.show()
-
-# crossline_idx = 120  # Change as needed
-
-# plt.figure(figsize=(10, 6))
-# plt.imshow(seismic_cube[:, crossline_idx, :], cmap='seismic', aspect='auto')
-# plt.colorbar(label='Amplitude')
-# plt.xlabel('Inline Index')
-# plt.ylabel('Time Sample')
-# plt.title(f'Crossline Slice {crosslines[crossline_idx]}')
-# plt.show()
-
-# time_slice_idx = 120  # Change as needed
-
-# plt.figure(figsize=(10, 6))
-# plt.imshow(seismic_cube[:, :, time_slice_idx], cmap='seismic', aspect='auto')
-# plt.colorbar(label='Amplitude')
-# plt.xlabel('Inline Index')
-# plt.ylabel('Crossline Index')
-# plt.title(f'Time Slice {samples[time_slice_idx]}')
-# plt.show()
 
 def calculate_pos_weight(train_loader):
 	pos_weight = []
